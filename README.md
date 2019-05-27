@@ -16,3 +16,4 @@ ld -m elf_i386 execve_bind.o -o execve_bind
 
 ./execve_bind
 ```
+Note that, as assembly language is architecture specific, particular Shellcodes will only work on one or several specific operating systems.

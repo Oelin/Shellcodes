@@ -12,7 +12,7 @@ To run a Shellcode outside the context of an exploit, one can use an assembler s
 nasm -f elf32 -o execve_bind.o execve_bind.asm
 ld -m elf_i386 execve_bind.o -o execve_bind
 
-# Run the Shellcode/
+# Run the Shellcode.
 
 ./execve_bind
 ```

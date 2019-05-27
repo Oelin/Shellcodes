@@ -1,6 +1,10 @@
 ; execve_bind.s, a simple bind-shell Shellcode for
 ; intel i386. Written by Oelin <me.oelin@gmail.com>.
 
+; This Shellcode binds to an interface on the host
+; machine and pipes the input and output of /bin/sh
+; through client TCP connections.
+
 section .text
     global _start
 

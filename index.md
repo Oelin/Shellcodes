@@ -16,4 +16,4 @@ exeve_tiny, is a variant of execve crafted to be only 21 bytes. Such a small She
 
 ### seed
 
-Commonly, exploits can be greatly limited by small buffers, only 30 bytes or so. Seed aims to provide circumvention by downloading and executing arbitarily large payloads while itself remaining small. (1)
+Commonly, exploits can be greatly limited by small buffers, only 30 bytes or so. seed attempts to overcome buffer limitations by injecting code into a process' memory offset from the buffer and branching to that location. Code to be injected is downloaded via curl specified by a URL.

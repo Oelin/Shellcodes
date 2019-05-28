@@ -10,6 +10,10 @@ An archetypal Shellcode which uses the `execve()` system call to open Linux's ba
 
 In many cases, Shellcodes are used to exploit programs on remote hosts rather than a physically accessable machine. As such, this Shellcode pipes the input and output of `/bin/sh` through client TCP connections. In exploit circumstances, Shellcodes of this type can lead to system wide compramise. execve_bind accepts connections on port 1234. (1)
 
+### exeve_tiny
+
+exeve_tiny, is a variant of execve crafted to be only 21 bytes. Such a small Shellcode can be used even when buffers are limiting.
+
 ### seed
 
 Commonly, exploits can be greatly limited by small buffers, only 30 bytes or so. Seed aims to provide circumvention by downloading and executing arbitarily large payloads while itself remaining small. (1)

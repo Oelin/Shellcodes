@@ -2,9 +2,9 @@ section .text:
     global _start
 
 _start:
-    jmp short path
+    jmp short two
 
-main:
+one:
     pop ebx
 
     xor ecx, ecx
@@ -13,6 +13,6 @@ main:
     mov al, 11
     int 128
 
-path:
-    call main
+two:
+    call one
     db "/bin/sh"

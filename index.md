@@ -4,7 +4,7 @@ This document provides details and brief explanations of each Shellcode featured
 The various compilation methods for each are given by reference in parenthesis and shown fully in `./compile.md`.
 
 ### execve
-An archetypal Shellcode which uses the `execve()` system call to open Linux's basic shell `/bin/sh` from within a vulnerable program. (1) (34 bytes).
+An archetypal Shellcode which uses the `execve()` system call to open Linux's basic shell `/bin/sh` from within a vulnerable program. (1) (25 bytes).
 
 ### execve_bind
 

